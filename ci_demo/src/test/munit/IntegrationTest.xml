@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="IntegrationTest.xml" />
+	<munit:test name="IntegrationTest-DemoFlow_1Test" description="Test" doc:id="91e9e9df-3b7b-4daf-91ce-00baff9a886f" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to DemoFlow_1" doc:id="5b3fd79d-0d4a-4cee-985e-0dd2b078771a" name="DemoFlow_1"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Payload" doc:id="331c478b-4213-4088-b1df-679696ba5a1a" expression="#[payload]" is="#[MunitTools::notNullValue()]" message='#["Payload is null"]'/>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="IntegrationTestTest" description="MUnit Test" doc:id="197d8239-60e4-431b-a2c8-983d8f1ab5f4" >
+		<munit:execution >
+			<flow-ref doc:name="Flow Reference" doc:id="40619d1b-f79f-4d38-bfde-ebf168e749b0" name="DemoFlow_1"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Payload Value" doc:id="7b995824-9116-4b4a-a4e3-a90ef386b1bd" expression="#[payload]" is='#[MunitTools::containsString("DEV")]' message='Unexpected payload'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

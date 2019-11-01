@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1c46e962-5353-4207-9d03-ca9816628774" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="4211ed08-c707-4916-91fe-3fbf7b0a37c8" file="${env}.yaml" />
+	<flow name="DemoFlow_1" doc:id="3777ffe9-3227-4975-a9a2-4a81712f00cc" >
+		<http:listener doc:name="Listener" doc:id="ab258cbf-a797-4cec-b9e3-f97e5e0b059e" config-ref="HTTP_Listener_config" path="/demo">
+			<http:response statusCode='#[vars.httpStatus default 200]' />
+		</http:listener>
+		<set-payload value='${name.value}' doc:name="Set Payload" doc:id="d4338cb3-3e0d-4aaf-93db-25b71d05fd6d" />
+		<set-variable value="200" doc:name="HTTP Status" doc:id="793ec6dc-bdf8-4c10-af44-6e15b0db9ed6" variableName="httpStatus"/>
+	</flow>
+	
+</mule>

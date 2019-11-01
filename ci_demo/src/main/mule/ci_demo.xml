@@ -15,5 +15,4 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<set-payload value='${name.value}' doc:name="Set Payload" doc:id="d4338cb3-3e0d-4aaf-93db-25b71d05fd6d" />
 		<set-variable value="200" doc:name="HTTP Status" doc:id="793ec6dc-bdf8-4c10-af44-6e15b0db9ed6" variableName="httpStatus"/>
 	</flow>
-	
 </mule>

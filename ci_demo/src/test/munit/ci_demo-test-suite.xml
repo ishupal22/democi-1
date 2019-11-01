@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="ci_demo-test-suite.xml" />
+	<munit:test name="DEV" description="Test" doc:id="aa4bc724-c838-4103-9724-133c238ed425" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to DemoFlow_1" doc:id="8d8d37c4-c146-4ef0-b7f6-f80c87cb6398" name="DemoFlow_1"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="215b0b45-b08d-4291-9881-bc140c0540f8" expression="#[payload]" is="#[matches(DEV)]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

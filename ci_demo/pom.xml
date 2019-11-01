@@ -7,7 +7,9 @@
 	<artifactId>ci_demo</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
+
 	<name>ci_demo</name>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -18,6 +20,7 @@
 		<env></env>
 		<uid />
 		<application.name>SampleMaven</application.name>
+		<mule.home>C:\Mule4\mule-enterprise-standalone-4.2.1-hf1</mule.home>
 		<pwd />
 	</properties>
 
@@ -25,27 +28,29 @@
 		<plugins>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
-  <artifactId>mule-maven-plugin</artifactId>
-  <version>3.3.2</version>
-  <extensions>true</extensions>
-				
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<extensions>true</extensions>
+
+
 				<configuration>
-        <cloudHubDeployment>
-				
-					 <uri>https://anypoint.mulesoft.com</uri>
-            <muleVersion>${app.runtime}</muleVersion>
-					<muleVersion>${mule.version}</muleVersion>
-					<username>${uid}</username>
-					<password>${pwd}</password>
-					            <applicationName>${application.name}</applicationName>
-					
-					<workerType>Micro</workerType>
-					<environment>Sandbox</environment>
-					<properties>
-					<env>${env}</env>
-					</properties>
-					        </cloudHubDeployment>
-					
+				 <standaloneDeployment>
+      <muleHome>${mule.home}</muleHome>
+      <muleVersion>${app.runtime}</muleVersion>
+    </standaloneDeployment>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>${app.runtime}</muleVersion>
+						<muleVersion>${mule.version}</muleVersion>
+						<username>${uid}</username>
+						<password>${pwd}</password>
+						<applicationName>${application.name}</applicationName>
+						<workerType>Micro</workerType>
+						<environment>Sandbox</environment>
+						<properties>
+							<env>${env}</env>
+						</properties>
+					</cloudHubDeployment>
 				</configuration>
 				<executions>
 					<execution>
@@ -121,6 +126,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<repositories>
 		<repository>
 			<id>anypoint-exchange</id>
@@ -150,4 +156,5 @@
 			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
 		</pluginRepository>
 	</pluginRepositories>
+
 </project>

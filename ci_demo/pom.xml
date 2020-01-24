@@ -37,8 +37,8 @@
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>
 						<muleVersion>${mule.version}</muleVersion>
-						<username>${uid}</username>
-						<password>${pwd}</password>
+						<username>${ANYPOINT_USERNAME}</username>
+						<password>${ANYPOINT_PASSWORD}</password>
 						<applicationName>${application.name}</applicationName>
 						<workerType>Micro</workerType>
 						<environment>Sandbox</environment>

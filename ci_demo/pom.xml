@@ -33,10 +33,6 @@
 
 
 				<configuration>
-				 <standaloneDeployment>
-      <muleHome>${mule.home}</muleHome>
-      <muleVersion>${app.runtime}</muleVersion>
-    </standaloneDeployment>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>

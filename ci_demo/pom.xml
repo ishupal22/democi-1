@@ -17,10 +17,10 @@
 		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
 		<munit.version>2.1.5</munit.version>
 		<env></env>
-		<uid>Dashboard</uid>
+		<uid>Training-1</uid>
 		<application.name>SampleMaven</application.name>
 		<mule.home>C:\Mule4\mule-enterprise-standalone-4.2.1-hf1</mule.home>
-		<pwd>Dashboard@123</pwd>
+		<pwd>Jespy@1789</pwd>
 	</properties>
 
 	<build>

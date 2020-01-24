@@ -17,10 +17,10 @@
 		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
 		<munit.version>2.1.5</munit.version>
 		<env></env>
-		<uid />
+		<uid>Dashboard</uid>
 		<application.name>SampleMaven</application.name>
 		<mule.home>C:\Mule4\mule-enterprise-standalone-4.2.1-hf1</mule.home>
-		<pwd />
+		<pwd>Dashboard@123</pwd>
 	</properties>
 
 	<build>
@@ -37,8 +37,8 @@
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>
 						<muleVersion>${mule.version}</muleVersion>
-						<username>${ANYPOINT_USERNAME}</username>
-						<password>${ANYPOINT_PASSWORD}</password>
+						<username>${uid}</username>
+						<password>${pwd}</password>
 						<applicationName>${application.name}</applicationName>
 						<workerType>Micro</workerType>
 						<environment>Sandbox</environment>

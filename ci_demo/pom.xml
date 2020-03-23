@@ -13,14 +13,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<app.runtime>4.2.0</app.runtime>
+		<app.runtime>4.3.0</app.runtime>
 		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
 		<munit.version>2.1.5</munit.version>
 		<env></env>
-		<uid>Training-1</uid>
+		<uid>beta-Ishupal</uid>
 		<application.name>SampleMaven</application.name>
 		<mule.home>C:\Mule4\mule-enterprise-standalone-4.2.1-hf1</mule.home>
-		<pwd>Jespy@1789</pwd>
+		<pwd></pwd>
 	</properties>
 
 	<build>
@@ -34,7 +34,7 @@
 
 				<configuration>
 					<cloudHubDeployment>
-						<uri>https://anypoint.mulesoft.com</uri>
+						<uri>https://stgx.anypoint.mulesoft.com</uri>
 						<muleVersion>${app.runtime}</muleVersion>
 						<muleVersion>${mule.version}</muleVersion>
 						<username>${uid}</username>
